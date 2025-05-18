@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MJN PORTFOLIO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #6c63ff;
+      --bg: #f9f9fb;
+      --text: #333;
+      --card: #ffffff;
+      --shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease-in-out;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header.hero {
+      background-image: url(bg.jpg);
+      color: #fff;
+      text-align: left;
+      padding: 6rem 1rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .image-container {
+      width: 30vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2em;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 6px solid #000000;
+      box-shadow: var(--shadow);
+      animation: float 1s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(1); }
+      50% { transform: translateY(10px); }
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      animation: fadeInDown 0.5s ease-out;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      opacity: 0.9;
+      animation: fadeInUp 1.2s ease-out;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 3rem 1.5rem;
+    }
+
+    section {
+      margin-bottom: 4rem;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: var(--transition);
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+      border-left: 4px solid var(--primary);
+      padding-left: 1rem;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--card);
+      background-color: #817bf3;
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: var(--primary);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px) scale(1.02);
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      list-style: none;
+    
+}
+    
+    .skills-list li {
+      background: var(--primary);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 1rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .skills-list li:hover{
+        transform: translateY(-10px) scale(1.02);
+    }
+
+    .contact p {
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #eee;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      section h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="image-container">
+      <img src="j.jpg"/>
+    </div>
+    <h1>Marry Joy Narido</h1>
+    <p>WEB/GRAPHIC designer</p>
+  </header>
+
+  <main>
+    <section class="section" id="about">
+      <h2>About Me</h2>
+      <p>Hello! I’m a DESIGNER who blends creativity with code to create interactive, user-friendly digital experiences. My focus is on responsive design, performance, and accessibility.</p>
+    </section>
+
+    <section class="section" id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="project-card">
+          <h3>Modern Portfolio</h3>
+          <p>A sleek, animated portfolio site using HTML, CSS, and JavaScript. Fully responsive and fast-loading.</p>
+        </div>
+        <div class="project-card">
+          <h3>React Task Manager</h3>
+          <p>Task management dashboard with real-time syncing using React and Firebase.</p>
+        </div>
+        <div class="project-card">
+          <h3>UX Case Study</h3>
+          <p>Redesigned a client app interface to improve conversion by 20%. Created wireframes and user flows.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>PPTX</li>
+        <li>MSWORD</li>
+        <li>Figma</li>
+        <li>Git & GitHub</li>
+      </ul>
+    </section>
+
+    <section class="section contact" id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="#">naridojoy18@gmail.com</a></p>
+      <p>09639719079</p>
+      <p>GitHub: <a href="#" target="_blank">./a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Narido. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll(".section");
+    const revealOnScroll = () => {
+      sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        if (top < window.innerHeight * 0.85) {
+          section.classList.add("visible");
+        }
+      });
+    };
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+  </script>
+</body>
+</html>
